@@ -2,7 +2,11 @@
   <% @posts.each do |post| %>
     <div class="content_post" style="background-image: url(<%= post.image %>);">
       <%= simple_format(post.text) %>
-      <span class="name"><%= post.name %></span>
+      <span class="name">
+        <a href="">
+          <span>投稿者</span><%= post.user.nickname %>
+        </a>
+      </span>
     </div>
   <% end %>
   <%= paginate(@posts) %>
