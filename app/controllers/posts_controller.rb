@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @posts = Post.includes(:user).page(params[:page]).per(5).order("created_at DESC")
@@ -26,6 +26,10 @@ class PostsController < ApplicationController
     if post.user_id == current_user.id
       post.update(post_params)
     end
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   private
