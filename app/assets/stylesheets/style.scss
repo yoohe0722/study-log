@@ -304,10 +304,10 @@ div.contents.row {
       font-size: 13px;
       a {
         display: block;
-        color: #858796;
+        color: $darkGray;
         &:hover {
           text-decoration: underline;
-          color: #858796;
+          color: $white;
         }
       }
       span {
@@ -368,6 +368,18 @@ form {
     &:hover {
       text-decoration: underline;
     }
+  }
+  p {
+    color: $black;
+  }
+}
+
+.pagination {
+  span , a {
+    color: $darkGray;
+  }
+  .current {
+    color: $accent;
   }
 }
 
