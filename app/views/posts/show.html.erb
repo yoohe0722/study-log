@@ -22,9 +22,9 @@
   </div>
   <div class="container">
     <% if current_user %>
-      <%= form_tag("/posts/#{@post.id}/comments", method: :post) do %>
-        <textarea cols="30" name="text" placeholder="コメントする" rows="2"></textarea>
-        <input type="submit" value="SENT">
+      <%= form_tag("/posts/#{@post.id}/comments",  method: :post,  id: "new_comment" ) do %>
+        <textarea cols="30" name="text" placeholder="コメントする" rows="2" class="textbox"></textarea>
+        <input type="submit" value="SEND" class="form__submit">
       <% end %>
     <% end %>
     <div class="comments">
