@@ -4,7 +4,8 @@
       <h3>
         編集する
       </h3>
-      <input placeholder="Image Url" type="text" name="image" value="<%= @post.image %>" autofocus="true">
+      <input placeholder="日付を入力" type="date" name="date" value="<%= @post.date %>" autofocus="true">
+      <input placeholder="勉強時間を入力" type="integer" name="study_time" value="<%= @post.study_time %>" autofocus="true">
       <textarea cols="30" name="text" placeholder="text" rows="10"><%= @post.text %></textarea>
       <input type="submit" value="SENT">
     <% end %>

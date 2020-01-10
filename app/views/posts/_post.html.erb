@@ -1,4 +1,4 @@
-<div class="content_post" style="background-image: url(<%= post.image %>);">
+<div class="content_post">
   <div class="more">
     <span><%= image_tag 'arrow_top.png' %></span>
     <ul class="more_list">
@@ -15,6 +15,8 @@
       <% end %>
     </ul>
   </div>
+  <h2><span>学習日　：</span><%= post.date %></h2>
+  <h2><span>学習時間：</span><%= post.study_time %><span>分</span></h2>
   <%= simple_format(post.text) %>
   <span class="name">
     <a href="/users/<%= post.user_id %>">
