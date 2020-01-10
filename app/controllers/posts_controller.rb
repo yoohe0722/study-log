@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(image: post_params[:image], text: post_params[:text], user_id: current_user.id)
+    Post.create(date: post_params[:date], study_time: post_params[:study_time], text: post_params[:text], user_id: current_user.id)
   end
 
   def destroy
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.permit(:image, :text)
+      params.permit(:date, :study_time, :text)
     end
 
     def move_to_index

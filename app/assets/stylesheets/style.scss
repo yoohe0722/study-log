@@ -167,6 +167,7 @@ header.header {
       font-size: 1em;
       cursor: pointer;
       position: relative;
+      color: $dark;
       &:after {
         content: '▼';
         font-size: .7em;
