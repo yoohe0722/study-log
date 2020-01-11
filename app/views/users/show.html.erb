@@ -1,6 +1,9 @@
 <div class="contents row" >
   <p><%= @nickname %>さんの投稿一覧</p>
   <%# <%= image_tag @user.image.url %>
+  <p><%= @nickname %>さんの累計学習時間：<%= @study_time_all %>分(<%= @study_time_all_hour %>時間)</p>
+  <p><%= @nickname %>さんの今月学習時間：<%= @study_time_month %>分(<%= @study_time_month_hour %>時間)</p>
+  <p><%= @nickname %>さんの今週学習時間：<%= @study_time_week %>分(<%= @study_time_week_hour %>時間)</p>
   <% @posts.each do |post| %>
     <%= render partial: "posts/post", locals: { post: post } %>
   <% end %>
