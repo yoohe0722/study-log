@@ -14,6 +14,13 @@
     </div>
 
     <div class="field">
+      <%= f.label :image %><br />
+      <div class="file-btn">
+        <%= f.file_field :image, style: "background-color: $dark;" %>
+      </div>
+    </div>
+
+    <div class="field">
       <%= f.label :password %>
       <% if @validatable %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
