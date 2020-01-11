@@ -346,6 +346,10 @@ form {
     border-radius: 5px;
     font-family: "游ゴシック", "YuGothic";
   }
+  input[type="file"] {
+    @extend .transition;
+    background-color: #fff;
+  }
   input[type="submit"] {
     @extend .transition;
     background-color: $accent;
