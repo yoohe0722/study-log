@@ -70,4 +70,5 @@ gem 'kaminari'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
-
+gem 'by_star'
+gem "font-awesome-sass"

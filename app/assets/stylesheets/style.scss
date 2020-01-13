@@ -22,6 +22,7 @@ $darkGray: #999999;
 $gray: #D8D8D8;
 $lightGray: #f5f5f3;
 $white: white;
+$blue: #4e73df;
 
 
 //mixin
@@ -135,7 +136,7 @@ header.header {
       float: left;
       a {
         display: block;
-        color: $dark;
+        color: $white;
         &:hover {
           color: $accent;
         }
@@ -398,3 +399,48 @@ footer {
     text-align: center;
   }
 }
+
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  margin: 0 1.25rem 1.25rem 1.25rem;
+  .card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    display: flex;
+    i {
+      display: block;
+      color: lighten($blue, 15%);
+      font-size: 2rem;
+      margin: 10px 10px 0 0 ;
+    }
+    span {
+      font-size: 0.8rem;
+    }
+  }
+  .card-title {
+    font-weight: bold;
+    color: $blue;
+    span {
+      color: $darkGray;
+    }
+  }
+}
+
+
+
+
