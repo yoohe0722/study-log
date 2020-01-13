@@ -1,9 +1,40 @@
 <div class="contents row" >
-  <p><%= @nickname %>さんの投稿一覧</p>
   <%# <%= image_tag @user.image.url %>
-  <p><%= @nickname %>さんの累計学習時間：<%= @study_time_all %>分(<%= @study_time_all_hour %>時間)</p>
-  <p><%= @nickname %>さんの今月学習時間：<%= @study_time_month %>分(<%= @study_time_month_hour %>時間)</p>
-  <p><%= @nickname %>さんの今週学習時間：<%= @study_time_week %>分(<%= @study_time_week_hour %>時間)</p>
+  <p><%= @nickname %>さんの学習時間統計</p>
+  <div class="card grid-4">
+    <div class="card-body">
+      <i class="fas fa-clock"></i>
+      <div class="card-content">
+        <div class="card-title">Total Time</div>
+        <div class="card-desc">
+          <%= @count_all %><span>min</span>(<%= @count_all_hour %><span>hour</span>)
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card grid-4">
+    <div class="card-body">
+      <i class="fas fa-calendar-alt"></i>
+      <div class="card-content">
+        <div class="card-title">This Month</div>
+        <div class="card-desc">
+          <%= @count_month %><span>min</span>(<%= @count_month_hour %><span>hour</span>)
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card grid-4">
+    <div class="card-body">
+      <i class="fas fa-calendar-week"></i>
+      <div class="card-content">
+        <div class="card-title">This Week</div>
+        <div class="card-desc">
+          <%= @count_week %><span>min</span>(<%= @count_week_hour %><span>hour</span>)
+        </div>
+      </div>
+    </div>
+  </div>
+  <p><%= @nickname %>さんの投稿一覧</p>
   <% @posts.each do |post| %>
     <%= render partial: "posts/post", locals: { post: post } %>
   <% end %>
