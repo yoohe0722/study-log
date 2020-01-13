@@ -1,7 +1,7 @@
 <div class="contents row" >
   <%# <%= image_tag @user.image.url %>
   <p><%= @nickname %>さんの学習時間統計</p>
-  <div class="card grid-4">
+  <div class="card grid-6">
     <div class="card-body">
       <i class="fas fa-clock"></i>
       <div class="card-content">
@@ -12,7 +12,7 @@
       </div>
     </div>
   </div>
-  <div class="card grid-4">
+  <div class="card grid-6">
     <div class="card-body">
       <i class="fas fa-calendar-alt"></i>
       <div class="card-content">
@@ -23,13 +23,24 @@
       </div>
     </div>
   </div>
-  <div class="card grid-4">
+  <div class="card grid-6">
     <div class="card-body">
       <i class="fas fa-calendar-week"></i>
       <div class="card-content">
         <div class="card-title">This Week</div>
         <div class="card-desc">
           <%= @count_week %><span>min</span>(<%= @count_week_hour %><span>hour</span>)
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card grid-6">
+    <div class="card-body">
+      <i class="fas fa-calendar-day"></i>
+      <div class="card-content">
+        <div class="card-title">daily Average<span>(resent7days)</span></div>
+        <div class="card-desc">
+          <%= @count_daily_average %><span>min</span>(<%= @count_daily_average_hour %><span>hour</span>)
         </div>
       </div>
     </div>
