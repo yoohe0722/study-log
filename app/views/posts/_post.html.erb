@@ -1,26 +1,43 @@
+
 <div class="content_post">
-  <div class="more">
-    <span><%= image_tag 'arrow_top.png' %></span>
-    <ul class="more_list">
-      <li>
-        <%= link_to "詳細", post_path(post.id), method: :get %>
-      </li>
-      <% if user_signed_in? && current_user.id == post.user_id %>
-        <li>
-          <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
-        </li>
-        <li>
-          <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
-        </li>
-      <% end %>
-    </ul>
+  <div class="user_image">
+    <% if post.user.image? %>
+      <%= image_tag post.user.image.url %>
+    <% else %>
+      <%= image_tag "/assets/images/user_default.png" %>
+    <% end %>
   </div>
-  <h2><span>学習日　：</span><%= post.date %></h2>
-  <h2><span>学習時間：</span><%= post.study_time %><span>分</span></h2>
-  <%= simple_format(post.text) %>
-  <span class="name">
-    <a href="/users/<%= post.user_id %>">
-      <span>投稿者</span><%= post.user.nickname %>
-    </a>
-  </span>
+  <div class="content-right">
+    <div class="post_header">
+      <p class="post_user"><%= post.user.nickname %></p>
+      <p class="created_at"><%= post.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+    </div>
+    <div class="content_desc">
+      <div><i class="fas fa-calendar"></i><%= post.date %></div>
+      <div><i class="fas fa-clock"></i><%= post.study_time %>分</div>
+      <div class="content_txt"><%= simple_format(post.text) %></div>
+    </div>
+    <div class="content_footer">
+      <div class="icon_list">
+        <div><i class="far fa-comment"></i>2</div>
+        <div><i class="far fa-heart"></i>2</div>
+      </div>
+      <div class="more">
+        <i class="fas fa-ellipsis-h"></i>
+        <ul class="more_list">
+          <li>
+            <%= link_to "詳細", post_path(post.id), method: :get %>
+          </li>
+          <% if user_signed_in? && current_user.id == post.user_id %>
+            <li>
+              <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

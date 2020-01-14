@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @count_month_hour = @count_month/60.round(1)
     @count_week =@posts.by_week(field: :date, startday: :monday).sum(:study_time)
     @count_week_hour = @count_week/60.round(1)
-    @count_daily_average = @posts.after(Date.today-7).average(:study_time).round(0)
-    @count_daily_average_hour = @count_daily_average/60
+    @count_daily_avg = @posts.after(Date.today-7).average(:study_time).round(0)
+    
   end
 end
