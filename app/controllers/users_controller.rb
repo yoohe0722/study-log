@@ -9,7 +9,9 @@ class UsersController < ApplicationController
     @count_month_hour = sprintf("%.1f",@count_month/60.to_f)
     @count_week =@posts.by_week(field: :date, startday: :monday).sum(:study_time)
     @count_week_hour = sprintf("%.1f",@count_week/60.to_f)
-    @count_daily_avg = @posts.after(Date.today-7).average(:study_time).round
-    @count_daily_avg_hour = sprintf("%.1f",@count_daily_avg/60.to_f)
+    if @count_all > 0
+      @count_daily_avg = @posts.after(Date.today-7).average(:study_time).round
+      @count_daily_avg_hour = sprintf("%.1f",@count_daily_avg/60.to_f)
+    end
   end
 end
