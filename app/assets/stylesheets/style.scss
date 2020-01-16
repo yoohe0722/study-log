@@ -369,6 +369,12 @@ div.contents.row {
         display: flex;
         div {
           margin-right: 15px;
+          .like-link {
+            cursor: pointer;
+          }
+          .liked {
+            color:rgb(224, 36, 94);
+          }
         }
       }
     }
@@ -493,7 +499,3 @@ footer {
     }
   }
 }
-
-
-
-
