@@ -9,7 +9,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(date: post_params[:date], study_time: post_params[:study_time], text: post_params[:text], user_id: current_user.id)
+    @new_post = Post.new(date: post_params[:date], study_time: post_params[:study_time], text: post_params[:text], user_id: current_user.id)
+    unless @new_post.save
+      flash.now[:alert] = '必須項目が入力されていません。'
+      render :new
+    end
   end
 
   def destroy
@@ -22,10 +26,14 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    if post.user_id == current_user.id
-      post.update(post_params)
+    @post = Post.find(params[:id])
+    if @post.user_id == current_user.id
+      unless @post.update(post_params)
+        flash.now[:alert] = '必須項目が入力されていません。'
+        render :edit
+      end
     end
+
   end
 
   def show
@@ -41,4 +49,5 @@ class PostsController < ApplicationController
     def move_to_index
       rredirect_to action: :index unless user_signed_in?
     end
+
 end
