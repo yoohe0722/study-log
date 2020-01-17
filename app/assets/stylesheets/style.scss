@@ -410,6 +410,10 @@ form {
       color: $red;
     }
   }
+  span {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
   input,textarea {
     width: 100%;
     @include boxBase(5px 0 15px,10px);
