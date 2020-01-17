@@ -4,9 +4,17 @@
       <h3>
         編集する
       </h3>
-      <input placeholder="日付を入力" type="date" name="date" value="<%= @post.date %>" autofocus="true">
-      <input placeholder="勉強時間を入力" type="integer" name="study_time" value="<%= @post.study_time %>" autofocus="true">
-      <textarea cols="30" name="text" placeholder="text" rows="10"><%= @post.text %></textarea>
+      <div class="notifications">
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: key)%>
+        <% end %>
+      </div>
+      <label for="input-date">学習日</label>
+      <input placeholder="日付を入力" type="date" id="input-date" name="date" value="<%= @post.date %>" autofocus="true">
+      <label for="input-study-time">学習時間<span>(半角数字)</span></label>
+      <input placeholder="勉強時間を入力(半角数字)" type="integer" id="input-study-time" name="study_time" value="<%= @post.study_time %>" autofocus="true">
+      <label for="input-text">学習内容</label>
+      <textarea cols="30" id="input-text" name="text" placeholder="text" rows="10"><%= @post.text %></textarea>
       <input type="submit" value="SENT">
     <% end %>
   </div>
