@@ -4,6 +4,11 @@
       <h3>
         投稿する
       </h3>
+      <div class="notifications">
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: key)%>
+        <% end %>
+      </div>
       <input placeholder="日付を入力" type="date" name="date">
       <input placeholder="勉強時間を分単位で入力" type="integer" name="study_time">
       <textarea cols="30" name="text" placeholder="text" rows="10"></textarea>
