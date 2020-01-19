@@ -53,7 +53,8 @@ line-height: 1.57;
   letter-spacing: 0.15em;
   font-size: 16px;
   color: $darkGray;
-  font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+  font-family:  "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+  // 'Unica One',
   margin: 0;
 }
 
@@ -141,7 +142,7 @@ header.header {
       }
     h1 {
       display: block;
-      font-size: 20px;
+      font-size: 24px;
       line-height: 41px;
       float: left;
       a {
@@ -185,22 +186,22 @@ header.header {
       cursor: pointer;
       // position: relative;
       color: $dark;
-      &:after {
-        content: '▼';
-        font-size: .7em;
-        margin-left: -4px;
-      }
+      // &:after {
+      //   content: '▼';
+      //   font-size: .7em;
+      //   margin-left: -4px;
+      // }
       &:hover ul {
         color: $accent;
         display: block;
       }
       img {
-        height: 20px;
-        width: 20px;
+        height: 35px;
+        width: 35px;
         border-radius: 50%;
     }
     ul {
-      // display: none;
+      display: none;
       // position: absolute;
       // top: 46px;
       // right: 0;
@@ -496,17 +497,22 @@ footer {
       font-size: 2rem;
       margin: 10px 10px 0 0 ;
     }
-    span {
+    span.strong {
+      font-weight: bold;
+    }
+    span.small {
       font-size: 0.8rem;
+      }
+    .card-title {
+      font-weight: bold;
+      color: $blue;
+      span {
+        color: $darkGray;
+        font-size: 0.6rem;
+      }
     }
   }
-  .card-title {
-    font-weight: bold;
-    color: $blue;
-    span {
-      color: $darkGray;
-    }
-  }
+  
 }
 
 // #以下はposts/new,editで使用予定
@@ -520,3 +526,107 @@ footer {
 // .required:before {
 //   content: "【必須】"
 // }
+
+// .wrapper {
+//   max-width: 1100px;
+//   display: flex;
+//   margin: 0 auto;
+//   .sidebar {
+//     max-width: 300px;
+//   }
+//   .main_contents {
+//     max-width: 700px;
+//   }
+// }
+
+
+//   .contents {
+//     max-width: 400px;
+//     @include boxBase(20px 0, 0);
+//     // max-width: 660px;
+    
+// }
+
+
+// -------下記sidebar---------
+.wrapper {
+  width: 1100px;
+  display: -webkit-flex;
+  display: flex;
+  margin: 0 auto;
+}
+.main {
+  display: block;
+  width: 660px;
+  margin: 0 auto;
+}
+.sidebar {
+  width: 340px;
+  margin-top: 16px;
+  position: sticky;
+  margin-bottom: 0;
+  top: 100px;
+  .contents_list{
+    padding: 20px;
+    margin-bottom: 10px;
+    i {
+      margin-right: 5px;
+    }
+    .btn {
+      @extend .transition;
+      background-color: $accent;
+      border-radius: 20px;
+      width: 100%;
+      margin: 0 auto;
+      border: 0;
+      font-size: 18px;
+      background-color: $blue;
+      a {
+        color: #fff;
+        display: block;
+      }
+      &:hover {
+        background-color: lighten($accent, 10%);
+      }
+    }
+    div.section_title {
+      padding-top: 20px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: left;
+      color: $blue;
+      &.ranking {
+        padding-top: 0;
+      }
+    }
+    ul {
+      li {
+        margin-top: 16px;
+        i {
+          color: lighten($blue, 15%);
+        }
+        i.gold {
+          color: gold;
+        }
+        i.silver {
+          color: silver;
+        }
+        i.bronze {
+          color: darksalmon;
+        }
+      }
+      li.ranking{
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+.sidebar__item {
+  margin-bottom: 20px;
+}
+.sidebar__item--fixed {
+  position: sticky;
+  margin-bottom: 0;
+  top: 10px;
+  z-index: 1;
+}
