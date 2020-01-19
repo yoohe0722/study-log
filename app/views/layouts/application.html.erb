@@ -25,7 +25,12 @@
   <body>
     <header class="header">
     <div class="header__bar row">
-      <h1 class="app_name"><a href="/">Study-Log</a></h1>
+      <h1 class="app_name">
+        <a href="/">
+          <i class="fas fa-hourglass-half"></i>
+          Study-Log
+        </a>
+      </h1>
       <div class="header__right">
         <% if user_signed_in? %>
           <div class="user_nav">
@@ -38,6 +43,7 @@
                 <% end %>
               <% end %>
               <%= current_user.nickname %>
+              <i class="far fa-caret-square-down"></i>
               <ul class="user__info">
                 <li>
                   <a href="/users/<%= current_user.id %>">マイページ</a>
@@ -56,8 +62,10 @@
       </div>
     </div>
   </header>
-
-    <%= yield %>
+    <div class="wrapper">
+      <%= render partial: "module/sidebar", locals: { user: current_user } %>
+      <%= yield %>
+    </div>
 
     <footer>
     <%# 以下はBootStrap用のテストコード %>
