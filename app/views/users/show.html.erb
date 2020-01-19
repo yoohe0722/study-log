@@ -7,7 +7,8 @@
       <div class="card-content">
         <div class="card-title">Total Time</div>
         <div class="card-desc">
-          <%= @count_all %><span>min</span>(<%= @count_all_hour %><span>hour</span>)
+          <span class="strong"><%= @count_all %></span>
+          <span class="small">min</span>(<%= @count_all_hour %><span class="small">hour</span>)
         </div>
       </div>
     </div>
@@ -18,7 +19,7 @@
       <div class="card-content">
         <div class="card-title">This Month</div>
         <div class="card-desc">
-          <%= @count_month %><span>min</span>(<%= @count_month_hour %><span>hour</span>)
+          <span class="strong"><%= @count_month %></span><span class="small">min</span>(<%= @count_month_hour %><span class="small">hour</span>)
         </div>
       </div>
     </div>
@@ -29,7 +30,7 @@
       <div class="card-content">
         <div class="card-title">This Week</div>
         <div class="card-desc">
-          <%= @count_week %><span>min</span>(<%= @count_week_hour %><span>hour</span>)
+          <span class="strong"><%= @count_week %></span><span class="small">min</span>(<%= @count_week_hour %><span class="small">hour</span>)
         </div>
       </div>
     </div>
@@ -38,9 +39,9 @@
     <div class="card-body">
       <i class="fas fa-calendar-day"></i>
       <div class="card-content">
-        <div class="card-title">daily Average<span>(resent7days)</span></div>
+        <div class="card-title">Daily Average<span>(resent7days)</span></div>
         <div class="card-desc">
-          <%= @count_daily_avg %><span>min</span>(<%= @count_daily_avg_hour %><span>hour</span>)
+          <span class="strong"><%= @count_daily_avg %></span><span class="small">min</span>(<%= @count_daily_avg_hour %><span class="small">hour</span>)
         </div>
       </div>
     </div>
