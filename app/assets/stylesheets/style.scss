@@ -121,9 +121,7 @@ h1,h2,h3,h4,h5,h6 {
 
 
 header.header {
-  // @include basePadding;
-  margin: 0 0;
-  padding: 5px 0px;
+  @include basePadding;
   border-bottom: 1px solid $gray;
   background-color:#4e73df;
   position: fixed;
@@ -240,7 +238,8 @@ header.header {
     right: 0;
   }
 }
-div.contents.row {
+div.contents {
+  max-width: 660px;
   h2 {
     @include boxBase(20px 0, 0);
     font-weight: normal;
