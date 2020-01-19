@@ -157,6 +157,7 @@ header.header {
     div.header__right {
       // float: right;
       // text-align: right;
+      height: 40px;
       a.post {
         @extend .btn;
         // width: 120px;
@@ -165,12 +166,13 @@ header.header {
         margin-left: 10px;
         color: $white;
         border: 2px solid $white;
+        height: 40px;
       }
     }
   }
   .user_nav {
     position: relative;
-    height: 100px;
+    // height: 100px;
     display: flex;
     // position: absolute;
     // right: 0;
