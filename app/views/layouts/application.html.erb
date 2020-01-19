@@ -25,25 +25,35 @@
   <body>
     <header class="header">
     <div class="header__bar row">
-      <h1 class="grid-6"><a href="/">Study-Log</a></h1>
-      <% if user_signed_in? %>
-        <div class="user_nav grid-6">
-          <span> <%= current_user.nickname %>
-            <ul class="user__info">
-              <li>
-                <a href="/users/<%= current_user.id %>">マイページ</a>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-              </li>
-            </ul>
-          </span>
-          <a class="post" href="/posts/new">投稿する</a>
-        </div>
-      <% else %>
-        <div class="grid-6">
-          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-          <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
-        </div>
-      <% end %>
+      <h1 class="app_name"><a href="/">Study-Log</a></h1>
+      <div class="header__right">
+        <% if user_signed_in? %>
+          <div class="user_nav">
+            <span>
+              <%= link_to user_path(current_user.id) do%>
+                <% if current_user.image? %>
+                  <%= image_tag current_user.image.url %>
+                <% else %>
+                  <%= image_tag "user_default.png" %>
+                <% end %>
+              <% end %>
+              <%= current_user.nickname %>
+              <ul class="user__info">
+                <li>
+                  <a href="/users/<%= current_user.id %>">マイページ</a>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
+            </span>
+            <a class="post" href="/posts/new">投稿する</a>
+          </div>
+        <% else %>
+          <div class="not_signed_in_list">
+            <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </header>
 
