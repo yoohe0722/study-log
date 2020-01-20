@@ -183,7 +183,7 @@ header.header {
       display: block;
       // float: left;
       margin-left: 30px;
-      // width: 150px;
+      width: 200px;
       // height: 50px;
       font-size: 1em;
       cursor: pointer;
@@ -613,6 +613,7 @@ footer {
     ul {
       li {
         margin-top: 10px;
+        padding-left: 10px;
         i {
           color: lighten($blue, 15%);
         }
