@@ -62,7 +62,7 @@ GEM
     builder (3.2.4)
     by_star (3.0.0)
       activesupport (> 3)
-    byebug (11.0.1)
+    byebug (11.1.0)
     capybara (3.30.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -221,8 +221,8 @@ GEM
     ruby_dep (1.5.0)
     rubyzip (2.0.0)
     sass (3.4.25)
-    sass-rails (5.0.7)
-      railties (>= 4.0.0, < 6)
+    sass-rails (5.0.8)
+      railties (>= 5.2.0)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
@@ -251,6 +251,8 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2019.3)
+      tzinfo (>= 1.0.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     warden (1.2.8)
@@ -291,7 +293,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.3)
-  sass-rails (= 5.0.7)
+  sass-rails
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -305,4 +307,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   2.0.2
+   2.1.4
