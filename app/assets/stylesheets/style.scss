@@ -265,6 +265,9 @@ div.contents {
     @include boxBase(10px 0 ,30px);
     position: relative;
     border-bottom: 1px solid $darkGray;
+    &.post-show {
+      margin-top: 16px;
+    }
     .post_container{
       display: flex;
       p {
@@ -467,7 +470,7 @@ form {
 }
 
 footer {
-  @include boxBase;
+  // @include boxBase;
   color: $gray;
   p {
     text-align: center;
@@ -574,7 +577,7 @@ footer {
   top: 0px;
   .contents_list{
     padding: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     i {
       margin-right: 5px;
     }
@@ -607,7 +610,7 @@ footer {
     }
     ul {
       li {
-        margin-top: 16px;
+        margin-top: 10px;
         i {
           color: lighten($blue, 15%);
         }
