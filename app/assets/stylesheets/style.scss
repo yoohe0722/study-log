@@ -50,7 +50,7 @@ body {
 
 h1,h2,h3,h4,h5,h6,body {
 line-height: 1.57;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   font-size: 16px;
   color: $darkGray;
   font-family:  "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
@@ -558,9 +558,8 @@ footer {
 //   .contents {
 //     max-width: 400px;
 //     @include boxBase(20px 0, 0);
-//     // max-width: 660px;
-    
-// }
+//     max-width: 660px;
+// // }
 
 
 // -------下記sidebar---------
@@ -577,14 +576,11 @@ footer {
 }
 .sidebar {
   width: 360px;
-  // margin-top: 16px;
-  // position: sticky;
-  // margin-bottom: 0;
-  top: 0px;
   .contents_list{
     @include boxBase(15px 20px);
     padding: 20px;
-    // margin-bottom: 16px;
+    position: fixed;
+    top: 70px;
     i {
       margin-right: 5px;
     }
@@ -611,9 +607,6 @@ footer {
       font-size: 1.2rem;
       text-align: left;
       color: $blue;
-      &.ranking {
-        padding-top: 0;
-      }
     }
     ul {
       li {
@@ -637,13 +630,4 @@ footer {
       }
     }
   }
-}
-.sidebar__item {
-  margin-bottom: 20px;
-}
-.sidebar__item--fixed {
-  position: sticky;
-  margin-bottom: 0;
-  top: 10px;
-  z-index: 1;
 }
