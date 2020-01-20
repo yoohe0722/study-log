@@ -46,7 +46,7 @@
               <i class="far fa-caret-square-down"></i>
               <ul class="user__info">
                 <li>
-                  <a href="/users/<%= current_user.id %>">マイページ</a>
+                  <%= link_to 'マイページ', user_path(current_user.id) %>
                 </li>
                 <li>
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
