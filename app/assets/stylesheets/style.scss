@@ -304,6 +304,11 @@ div.contents {
             margin-top: 10px;
             color: $darkGray;
           }
+          .content_txt {
+            p {
+            word-break: break-all;
+            }
+          }
         }
       }
       .content_footer {
@@ -329,15 +334,16 @@ div.contents {
           text-align: center;
           position: relative;
           // pointer-events: auto;
+          text-align: right;
           &:hover ul.more_list {
             display: block;
           }
           ul.more_list {
             position: absolute;
-            text-align: left;
+            text-align: center;
             width: 80px;
             right: 0;
-            bottom:25px;
+            bottom:23px;
             font-size: 12px;
             background-color: $white;
             border: 1px solid #ddd;
@@ -564,8 +570,8 @@ footer {
   width: 340px;
   margin-top: 16px;
   position: sticky;
-  margin-bottom: 0;
-  top: 100px;
+  // margin-bottom: 0;
+  top: 0px;
   .contents_list{
     padding: 20px;
     margin-bottom: 10px;
