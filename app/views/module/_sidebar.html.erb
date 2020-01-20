@@ -20,7 +20,7 @@
           <i class="fas fa-heart"></i><%= link_to 'いいねした投稿一覧', '#' %>
         </li>
         <li>
-          <i class="fas fa-user"></i><%= link_to 'マイページ', '#' %>
+          <i class="fas fa-user"></i><%= link_to 'マイページ', user_path(current_user.id) %>
         </li>
         <li>
           <i class="fas fa-cog"></i><%= link_to 'ユーザー情報の編集', '#' %>
