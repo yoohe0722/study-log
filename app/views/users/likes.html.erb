@@ -1,0 +1,12 @@
+<div class="main">
+  <div class="contents" >
+    <p>いいねした投稿一覧</p>
+    <div class="contents_list">
+      <% @likes.each do |like| %>
+        <% post = Post.find_by(id: like.post_id) %>
+        <%= render partial: "posts/post", locals: { post: post } %>
+      <% end %>
+    </div>
+    <%= paginate(@likes) %>
+  </div>
+</div>
