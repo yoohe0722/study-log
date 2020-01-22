@@ -14,7 +14,7 @@
           <i class="fas fa-address-book"></i><%= link_to 'フォロワーの投稿一覧', '#' %>
         </li>
         <li>
-          <i class="fas fa-comments"></i><%= link_to 'コメントした投稿一覧', '#' %>
+          <i class="fas fa-comments"></i><%= link_to 'コメントした投稿一覧', comments_users_path(current_user.id) %>
         </li>
         <li>
           <i class="fas fa-heart"></i><%= link_to 'いいねした投稿一覧', likes_users_path(current_user.id) %>
