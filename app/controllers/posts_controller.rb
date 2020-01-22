@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_post, except: [:index]
+  before_action :set_post, except: [:index, :new, :create]
   helper_method :monthly_ranking
 
   def index
@@ -39,10 +39,10 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user)
   end
 
-  def monthly_ranking
-    binding.pry
-    @monthly_ranking = User.find(Post.group(:user_id).order('sum(:study_time) desc').limit(3))
-  end
+  # def monthly_ranking
+  #   binding.pry
+  #   @monthly_ranking = User.find(Post.group(:user_id).order('sum(:study_time) desc').limit(3))
+  # end
 
   private
     def post_params
