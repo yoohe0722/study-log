@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show] do
     collection do
-      # get 'likes/:id' => 'users#likes', as: :likes
       get ":id/likes" => "users#likes", as: :likes
+      get ":id/comments" => "users#comments", as: :comments
     end
   end
 end
