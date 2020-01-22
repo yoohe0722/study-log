@@ -251,15 +251,21 @@ div.contents {
   max-width: 660px;
   h2 {
     @include boxBase(20px 0, 0);
-    font-weight: normal;
+    font-weight: bold;
     strong {
       font-weight: bold;
       padding-right: 5px;
       font-size: 1.2em;
     }
   }
-  .new_user{
+  .new_user {
   font-family: "游ゴシック", "YuGothic";
+  }
+  .user_destroy {
+    background-color: lighten($red, 20%);
+    &:hover {
+      background-color: lighten($red, 30%);
+    }
   }
 
   .contents_list {
