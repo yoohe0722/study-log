@@ -1,0 +1,12 @@
+<div class="main">
+  <div class="contents" >
+    <p>コメントした投稿一覧</p>
+    <div class="contents_list">
+      <% @comments.each do |comment| %>
+        <% post = Post.find_by(id: comment.post_id) %>
+        <%= render partial: "posts/post", locals: { post: post } %>
+      <% end %>
+    </div>
+    <%= paginate(@comments) %>
+  </div>
+</div>
