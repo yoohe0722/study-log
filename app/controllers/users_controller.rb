@@ -16,6 +16,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def likes
+    @likes = @user.likes.page(params[:page]).per(5).order("created_at DESC")
+  end
+
   def hour(time)
     sprintf("%.1f", time/60.to_f)
   end
