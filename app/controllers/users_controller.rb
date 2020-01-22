@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  before_action :set_user
+
   def show
-    @user = User.find(params[:id])
     @nickname = @user.nickname
     @posts = @user.posts.page(params[:page]).per(5).order("created_at DESC")
     @count_all = @posts.sum(:study_time)
@@ -17,6 +18,10 @@ class UsersController < ApplicationController
 
   def hour(time)
     sprintf("%.1f", time/60.to_f)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
 end
