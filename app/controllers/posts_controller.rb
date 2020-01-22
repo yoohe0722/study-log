@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
+  before_action :set_post
+  helper_method :monthly_ranking
 
   def index
     @posts = Post.includes(:user).page(params[:page]).per(5).order("created_at DESC").limit(50)
@@ -17,16 +19,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.destroy if post.user_id == current_user.id
+    @post.destroy if @post.user_id == current_user.id
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.user_id == current_user.id
       unless @post.update(post_params)
         flash.now[:alert] = '必須項目が入力されていません。'
@@ -37,8 +36,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @comments = @post.comments.includes(:user)
+  end
+
+  def monthly_ranking
+    binding.pry
+    @monthly_ranking = User.find(Post.group(:user_id).order('sum(:study_time) desc').limit(3))
   end
 
   private
@@ -48,6 +51,10 @@ class PostsController < ApplicationController
 
     def move_to_index
       rredirect_to action: :index unless user_signed_in?
+    end
+
+    def set_post
+      @post = Post.find(params[:id])
     end
 
 end
