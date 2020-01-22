@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_post
+  before_action :set_post, except: [:index]
   helper_method :monthly_ranking
 
   def index
