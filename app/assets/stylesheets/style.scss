@@ -656,6 +656,7 @@ footer {
   width: 360px;
   .contents_list{
     @include boxBase(15px 20px);
+    min-width: 320px;
     padding: 20px;
     position: fixed;
     top: 70px;
