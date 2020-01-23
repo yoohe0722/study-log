@@ -11,4 +11,10 @@ Rails.application.routes.draw do
       get ":id/comments" => "users#comments", as: :comments
     end
   end
+  devise_scope :user do
+    get 'profile/:id/' => 'users/registrations#profile', as: 'profile'
+    get 'profile/:id/following', to: 'users/registrations#following', as: 'following'
+    get 'profile/:id/followers', to: 'users/registrations#followers', as: 'followers'
+  end
+  resources :relationships, only: [:create, :destroy]
 end

@@ -1,0 +1,39 @@
+<div class="card grid-12 profile">
+  <div class="card-body">
+    <div class="user_image">
+      <%= link_to user_path(@user.id) do%>
+        <% if @user.image? %>
+          <%= image_tag @user.image.url %>
+        <% else %>
+          <%= image_tag "user_default.png" %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="card-right">
+      <div class="card-header">
+        <div class="card-title">
+          <%= @user.nickname %>
+        </div>
+        <div class="follow-btn">
+          <%= render 'devise/shared/follow_form' if user_signed_in? %>
+        </div>
+      </div>
+      <%# <div class="profile-txt">
+        <p>テストテキストテストテキストテストテキストテストテキスト</p>
+      </div> %>
+      <% @user ||= current_user %>
+      <div class="stats">
+        <a href="<%= following_path(@user) %>">フォロー
+          <strong id="following" class="stat">
+            <%= @user.following.count %>
+          </strong>
+        </a>
+        <a href="<%= followers_path(@user) %>">フォロワー
+          <strong id="followers" class="stat">
+            <%= @user.followers.count %>
+          </strong>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

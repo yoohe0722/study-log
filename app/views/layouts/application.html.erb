@@ -24,7 +24,7 @@
 
   <body>
     <header class="header">
-    <div class="header__bar row">
+    <div class="header__bar">
       <h1 class="app_name">
         <a href="/">
           <i class="fas fa-hourglass-half"></i>
@@ -66,7 +66,9 @@
   </header>
     <div class="wrapper">
       <%= render partial: "module/sidebar", locals: { user: current_user } %>
-      <%= yield %>
+      <div class="main">
+        <%= yield %>
+      </div>
     </div>
 
     <footer>
