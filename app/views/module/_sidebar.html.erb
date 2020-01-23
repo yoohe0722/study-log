@@ -30,7 +30,7 @@
         </li>
       <% else %>
         <li>
-          <i class="fas fa-door-open"></i><%= link_to "ログイン", destroy_user_session_path, method: :delete %>
+          <i class="fas fa-door-open"></i><%= link_to "ログイン", user_session_path %>
         </li>
         <li>
           <i class="fas fa-user-plus"></i><%= link_to "新規登録", new_user_registration_path, class: 'post' %>
