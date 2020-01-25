@@ -43,17 +43,8 @@
                 <% end %>
               <% end %>
               <%= current_user.nickname %>
-              <i class="far fa-caret-square-down"></i>
-              <ul class="user__info">
-                <li>
-                  <%= link_to 'マイページ', user_path(current_user.id) %>
-                </li>
-                <li>
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-                </li>
-              </ul>
+              <%= render partial: "module/header_small_nav", locals: { user: current_user } %>
             </span>
-            <a class="post" href="/posts/new">投稿する</a>
           </div>
         <% else %>
           <div class="not_signed_in_list">
