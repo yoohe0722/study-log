@@ -460,8 +460,8 @@ ul li {
 
 .row {
   width: 100%;
-  // margin-left: auto;
-  // margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
   max-width: 700px;
@@ -609,4 +609,17 @@ ul li {
     width: 48.2% !important;
   }
 }
+
+@media only screen and (max-width: 1080px) {
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+  .header__bar,
+  .wrapper {
+    width: 700px!important;
+  }
+  .sidebar{
+    display: none;
+  }
+  .header_small_nav {
+    display: inline-block!important;
+  }
+}

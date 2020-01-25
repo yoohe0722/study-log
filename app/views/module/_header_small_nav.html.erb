@@ -1,0 +1,35 @@
+<div class="header_small_nav">
+  <i class="fas fa-bars">
+    <ul class = "user__info">
+      <li>
+        <i class="fas fa-newspaper"></i><%= link_to '最新の投稿一覧', root_path %>
+      <% if user_signed_in? %>
+        <%# <li>
+          <i class="fas fa-address-book"></i><%= link_to 'フォロワーの投稿一覧', '#' %>
+        <%# </li> %>
+        <li>
+          <i class="fas fa-comments"></i><%= link_to 'コメントした投稿一覧', comments_users_path(current_user.id) %>
+        </li>
+        <li>
+          <i class="fas fa-heart"></i><%= link_to 'いいねした投稿一覧', likes_users_path(current_user.id) %>
+        </li>
+        <li>
+          <i class="fas fa-user"></i><%= link_to 'マイページ', user_path(current_user.id) %>
+        </li>
+        <li>
+          <i class="fas fa-cog"></i><%= link_to 'ユーザー情報の編集', edit_user_registration_path %>
+        </li>
+        <li>
+          <i class="fas fa-door-closed"></i><%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <i class="fas fa-door-open"></i><%= link_to "ログイン", user_session_path %>
+        </li>
+        <li>
+          <i class="fas fa-user-plus"></i><%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+        </li>
+      <% end %>
+    </ul>
+  </i>
+</div>

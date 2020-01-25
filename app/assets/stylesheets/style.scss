@@ -123,7 +123,6 @@ h1,h2,h3,h4,h5,h6 {
 
 header.header {
   @include basePadding;
-  // border-bottom: 1px solid $gray;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   background-color:#4e73df;
   position: fixed;
@@ -135,9 +134,7 @@ header.header {
     position: relative;
     display: flex;
     justify-content: space-between;
-    // padding-right: 20px;
     max-width: 1100px;
-    padding-right: 30px;
     margin: 0 auto;
     &.row:before {
       content: none;
@@ -182,52 +179,51 @@ header.header {
     position: relative;
     line-height: 40px;
     display: flex;
-    // position: absolute;
-    // right: 0;
     span {
-      // top: 5px;
       display: block;
-      // float: left;
       margin-left: 30px;
-      // width: 200px;
-      // height: 50px;
       font-size: 1em;
       cursor: pointer;
       position: relative;
       color: $dark;
-      // &:after {
-      //   content: '▼';
-      //   font-size: .7em;
-      //   margin-left: -4px;
-      // }
-      &:hover ul {
-        color: $accent;
-        display: block;
-      }
       img {
         height: 35px;
         width: 35px;
         border-radius: 50%;
     }
-    ul {
+    .header_small_nav {
       display: none;
-      position: absolute;
-      top: 40px;
-      right: 0;
-      width: 100px;
-      // float: right;
-      border-left: 1px solid #d8d8d8;
-      border-right: 1px solid #d8d8d8;
-      box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
-      li {
-        // display: flex;
-        background-color: #f0f0f0;
-        }
-        a {
-          display: block;
-          text-align: center;
-          font-size: 0.8rem;
-          border-bottom: 1px solid #d8d8d8;
+      // display: inline-block;
+      &:hover ul{
+        display: block;
+        color: $accent;
+      }
+      ul {
+        display: none;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        width: 200px;
+        border-left: 1px solid #d8d8d8;
+        border-right: 1px solid #d8d8d8;
+        border-bottom: 1px solid #d8d8d8;
+        box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
+        li {
+          background-color: #f0f0f0;
+          line-height: 20px;
+          padding: 5px 10px;
+          margin: auto;
+          }
+          i {
+            text-align: center;
+            color: lighten($blue, 15%);
+          }
+          a {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: normal;
+            margin-left: 5px;
+          }
         }
       }
     }
@@ -251,7 +247,6 @@ header.header {
   }
 }
 div.contents {
-  max-width: 660px;
   h2 {
     @include boxBase(20px 0, 0);
     font-weight: bold;
@@ -349,11 +344,9 @@ div.contents {
         }
         .more {
           cursor: pointer;
-          // z-index: 2;
           width: 80px;
           text-align: center;
           position: relative;
-          // pointer-events: auto;
           text-align: right;
           &:hover ul.more_list {
             display: block;
@@ -378,7 +371,6 @@ div.contents {
               a {
                 display: block;
                 padding: 5px;
-                // pointer-events: auto;
                 &:hover {
                   background-color: $accent;
                   color: #fff;
@@ -397,7 +389,6 @@ div.contents {
     display:block;
     width: 100%;
     height: 100%;
-    // pointer-events: auto;
     background-size: cover;
   }
   .success {
@@ -486,14 +477,6 @@ form {
   }
 }
 
-footer {
-  // @include boxBase;
-  color: $gray;
-  p {
-    text-align: center;
-  }
-}
-
 .card {
   position: relative;
   display: -webkit-box;
@@ -525,20 +508,12 @@ footer {
       }
     }
     .card-right {
-      // margin-left: 10px;
       padding: 10px;
       .card-header {
         display: flex;
-        // justify-content: center;
         .card-title {
           line-height: 20px;
           padding: 5px 0;
-          // &:before {
-          //   content: none;
-          // }
-          // &:after {
-          //   content: none;
-          // }
         }
         .follow-btn {
           input[type="submit"] {
@@ -601,49 +576,14 @@ footer {
   li {
     border-bottom: 1px solid $gray;
     padding: 5px;
-    // margin-bottom: 10px;
   }
   li:last-child {
     border: none;
   }
 }
 
-// #以下はposts/new,editで使用予定
-// .form__submit[disabled] {
-//   background-color: $darkGray;
-//   cursor: not-allowed;
-// }
-// .required {
-//   color:red;
-// }
-// .required:before {
-//   content: "【必須】"
-// }
-
-// .wrapper {
-//   max-width: 1100px;
-//   display: flex;
-//   margin: 0 auto;
-//   .sidebar {
-//     max-width: 300px;
-//   }
-//   .main_contents {
-//     max-width: 700px;
-//   }
-// }
-
-
-//   .contents {
-//     max-width: 400px;
-//     @include boxBase(20px 0, 0);
-//     max-width: 660px;
-// // }
-
-
-// -------下記sidebar---------
 .wrapper {
   width: 1100px;
-  display: -webkit-flex;
   display: flex;
   margin: 0 auto;
 }
@@ -709,5 +649,13 @@ footer {
         font-size: 0.8rem;
       }
     }
+  }
+}
+
+footer {
+  // @include boxBase;
+  color: $gray;
+  p {
+    text-align: center;
   }
 }
