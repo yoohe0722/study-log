@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @count_week = @posts.by_week(field: :date, startday: :monday).sum(:study_time)
     @count_week_hour = hour(@count_week)
     if @count_all > 0
-      @count_daily_avg = @posts.after(Date.today-7).average(:study_time).round
+      @count_daily_avg = @posts.after(Date.today-7).average(:study_time)
       @count_daily_avg_hour = hour(@count_daily_avg)
     end
   end
