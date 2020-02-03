@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def comments
     @comments = @user.comments.page(params[:page]).per(5).order("created_at DESC")
-  endp
+  end
 
   def hour(time)
     sprintf("%.1f", time / 60.to_f)
