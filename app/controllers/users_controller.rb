@@ -13,6 +13,9 @@ class UsersController < ApplicationController
     if @count_week > 0
       @count_daily_avg = @posts.after(Date.today-7).average(:study_time).round
       @count_daily_avg_hour = hour(@count_daily_avg)
+    else
+      @count_daily_avg = 0
+      @count_daily_avg_hour = 0
     end
   end
 
