@@ -24,6 +24,7 @@ Study-Log
 <br>
 
 ## DEMO
+<img width="1186" alt="スクリーンショット 2020-05-07 19 59 10" src="https://user-images.githubusercontent.com/54013969/81291690-3b78d680-90a5-11ea-82f1-089b984fc49c.png">
 
 <br>
 
