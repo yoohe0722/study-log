@@ -1,7 +1,7 @@
 # README
 
 ## アプリ名
-Log-app
+Study-Log
 
 ## 概要
 学習時間を投稿するSNSアプリ。<br>
@@ -12,8 +12,8 @@ Log-app
 <br>
 
 ## 本番環境
-デプロイ先→https://study-log-app.herokuapp.com/
-テストアカウント＆ID→
+デプロイ先→https://study-log-app.herokuapp.com/<br>
+テストアカウント→email:test@email.com / pass:12345678
 <br>
 
 ## 制作背景(意図)
